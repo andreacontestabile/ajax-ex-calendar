@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log(moment("1January2018").format("YYYY-MM-DD"));
   var startYear = 2018;
   var startMonth = 0;
 
@@ -17,7 +16,7 @@ $(document).ready(function() {
       },
       "method": "GET",
       "success": function(data, status) {
-        renderMonth();
+        renderMonth(data);
       },
       "error": function (error) {
         alert("Error!");
@@ -25,14 +24,24 @@ $(document).ready(function() {
     }
   );
 
-  function renderMonth() {
+  function renderMonth(data) {
     var daysInMonth = momentDate.daysInMonth();
     for (var i = 1; i <= daysInMonth; i++) {
       var context = {
         "day": i,
         "month": momentDate.format("MMMM")
       };
-      var html = template(context);
+      var html = $(template(context));
+      var currentMomentDate = moment(context.day + context.month + startYear);
+      var currentMomentDateFormat = currentMomentDate.format("YYYY-MM-DD");
+      if (data.response.length > 0) {
+        for (var j = 0; j < data.response.length; j++) {
+          if (data.response[j].date == currentMomentDateFormat ) {
+            $(html).addClass("holiday");
+            console.log($(html));
+          }
+        }
+      }
       $("ul.month-display").append(html);
     }
   }
