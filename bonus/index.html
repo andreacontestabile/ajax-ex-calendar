@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" charset="utf-8"></script>
+  <script src="https://momentjs.com/downloads/moment.js" charset="utf-8"></script>
+  <script src="https://momentjs.com/downloads/moment-with-locales.js" charset="utf-8"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="container">
+    <header class="main-header">
+      <button class="btn" id="prev"><i class="fas fa-chevron-circle-left"></i></button>
+      <h1></h1>
+      <button class="btn" id="next"><i class="fas fa-chevron-circle-right"></i></button>
+    </header>
+    <main>
+      <ul class="month-display">
+
+      </ul>
+    </main>
+  </div>
+
+  <script id="day-template" type="text/x-handlebars-template">
+  <li class="day"><span class="day-number">{{day}}</span> {{month}}</li>
+  </script>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+</html>
