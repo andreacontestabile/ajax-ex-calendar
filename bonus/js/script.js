@@ -103,7 +103,7 @@ $(document).ready(function() {
                 // Aggiungo la classe "holiday"
                 holidaySelect.addClass("holiday");
                 // Aggiungo uno span contenente il nome della festività
-                holidaySelect.append(" &mdash; <span>" + holidayName + "</span>");
+                holidaySelect.append(" <span class='holiday-name'>" + holidayName + "</span>");
               }
             }
           },
